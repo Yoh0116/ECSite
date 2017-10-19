@@ -30,14 +30,15 @@ footer{
 
 .box1{
     position:relative;
+    top:100px;
     height:400px;
     width:80%;
     margin:0 auto;
-    top:100px
+
 }
 
 .slider img{
-	margin:auto auto;
+	margin:0 auto;
 }
 
 
@@ -46,10 +47,11 @@ footer{
     top:180px;
     width:80%;
 	margin:0 auto;
+	text-align:center;
 }
 
 .box3{
 	width:77px;
-	height:10px;
 	margin:0 auto;
 }
+

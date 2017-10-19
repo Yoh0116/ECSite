@@ -29,29 +29,29 @@
 </head>
 <body>
 	<header>
-            <div id="logo">THE ECSITE</div>
-        </header>
+		<div id="logo">THE ECSITE</div>
+    </header>
 
-        <div id="main">
-            <div class="box1">
-                <div class="slider">
-                    <div><img src="./img/img01.jpg" height=400px></div>
-                    <div><img src="./img/img02.jpg" height=400px></div>
-                    <div><img src="./img/img03.jpg" height=400px></div>
-                    <div><img src="./img/img04.jpg" height=400px></div>
-                </div>
-            </div>
-            <div class="box2">
-            	<div class="box3">
-                	<s:form action="LoginAction">
-                    	<s:submit value="商品購入"/>
-                	</s:form>
-                	<s:if test="#session.id !=null">
-                		<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
-                	</s:if>
-                </div>
+    <div id="main">
+        <div class="box1">
+        	<div class="slider">
+        		<div><img src="./img/img01.jpg" height=400px></div>
+                <div><img src="./img/img02.jpg" height=400px></div>
+                <div><img src="./img/img03.jpg" height=400px></div>
+                <div><img src="./img/img04.jpg" height=400px></div>
             </div>
         </div>
+        <div class="box2">
+            <div class="box3">
+                <s:form action="HomeAction">
+                    <s:submit value="商品購入"/>
+                </s:form>
+            </div>
+            <s:if test="#session.id !=null">
+                <p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
+            </s:if>
+        </div>
+    </div>
 
 	<footer>
 	</footer>
