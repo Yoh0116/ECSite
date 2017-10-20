@@ -30,6 +30,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		result = SUCCESS;
+		buyItemInfoMap.put("count", count);
 		int intCount = Integer.parseInt(buyItemInfoMap.get("count").toString());
 		int intPrice = Integer.parseInt(buyItemInfoMap.get("buyItem_price").toString());
 

@@ -9,7 +9,7 @@ public class BuyItemDTO {
 	public String itemPrice;
 
 	public String getItemName(){
-		return this.itemName;
+		return itemName;
 	}
 
 	public void setItemName(String itemName){
@@ -17,7 +17,7 @@ public class BuyItemDTO {
 	}
 
 	public String getItemPrice(){
-		return this.itemPrice;
+		return itemPrice;
 	}
 
 	public void setItemPrice(String itemPrice){
@@ -25,7 +25,7 @@ public class BuyItemDTO {
 	}
 
 	public int getId(){
-		return this.id;
+		return id;
 	}
 
 	public void setId(int id){
