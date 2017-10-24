@@ -21,8 +21,6 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 	public String result;
 
-	public SessionAware session = new UserCreateConfirmAction();
-
 	public UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
 
 	public String execute() throws SQLException {

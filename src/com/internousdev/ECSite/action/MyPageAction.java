@@ -3,10 +3,13 @@ package com.internousdev.ECSite.action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.ECSite.dao.MyPageDAO;
+import com.internousdev.ECSite.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware{

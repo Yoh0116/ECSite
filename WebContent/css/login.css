@@ -69,13 +69,13 @@ p{
 
 form{
     position:relative;
+    top:-20px;
     width:50%;
     margin:0 auto;
 }
 
 input{
     position: relative;
-    top:-20px;
     margin-bottom: 10px;
 }
 

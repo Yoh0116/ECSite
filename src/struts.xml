@@ -61,7 +61,7 @@
 		<!-- MyPageAction -->
 		<action name="MyPageAction" class="com.internousdev.ECSite.action.MyPageAction" method="execute">
 			<result name="success">myPage.jsp</result>
-			<result name="error">error.jsp</result>
+			<result name="error">error2.jsp</result>
 		</action>
 
 
