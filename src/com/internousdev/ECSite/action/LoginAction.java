@@ -1,6 +1,7 @@
 package com.internousdev.ECSite.action;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,6 +39,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 
+	public ArrayList<BuyItemDTO> buyItemList = new ArrayList<BuyItemDTO>();
+
 
 
 
@@ -52,11 +55,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(((LoginDTO)Session.get("loginUser")).getLoginFlg()){
 			result = SUCCESS;
 
-			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
+			BuyItemDTO buyItemDTO = new BuyItemDTO();
 			Session.put("login_user_id", loginDTO.getLoginId());
 			Session.put("id",buyItemDTO.getId());
 			Session.put("buyItem_name",buyItemDTO.getItemName());
 			Session.put("buyItem_price",buyItemDTO.getItemPrice());
+
+			buyItemList = buyItemDAO.getBuyItemInfo();
+			Session.put("itemresult", buyItemList);
 
 			return result;
 

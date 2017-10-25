@@ -87,7 +87,7 @@
 			</tr>
 			<s:iterator value="myPageList">
 				<tr>
-					<td><s:property value="itemName"/></td>
+					<td><s:property value="buyItem_name"/></td>
 					<td><s:property value="totalPrice"/><span>円</span></td>
 					<td><s:property value="totalCount"/><span>台</span></td>
 					<td><s:property value="payment"/></td>
@@ -104,6 +104,7 @@
 			<h3><s:property value="message"/></h3>
 		</s:if>
 			<div id="text-right">
+				<p>登録内容の変更は<a href='<s:url action="ChangeUserInfoAction"/>'>こちら</a></p>
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</div>

@@ -67,6 +67,7 @@
 			<p>BuyItem</p>
 		</div>
 		<div>
+			<s:iterator value="buyItemList">
 			<s:form action="BuyItemAction">
 				<table>
 
@@ -75,7 +76,7 @@
 							<span>商品名</span>
 						</td>
 						<td>
-							<s:property value="Session.buyItem_name"/>
+							<s:property value="itemName"/>
 						</td>
 					</tr>
 
@@ -84,7 +85,7 @@
 							<span>値段</span>
 						</td>
 						<td>
-							<s:property value="Session.buyItem_price"/><span>円</span>
+							<s:property value="itemPrice"/><span>円</span>
 						</td>
 					</tr>
 
@@ -115,12 +116,15 @@
 
 					<tr>
 						<td>
+							<input type="hidden" name="itemName" value="<s:property value='itemName'/>">
+							<input type="hidden" name="itemPrice" value="<s:property value='itemPrice'/>">
 							<s:submit value="購入"/>
 						</td>
 					</tr>
 
 				</table>
 			</s:form>
+			</s:iterator>
 				<div>
 					<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 					<p>マイページは<a href='<s:url action="MyPageAction" />'>こちら</a></p>

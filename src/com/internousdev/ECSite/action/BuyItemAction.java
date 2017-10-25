@@ -1,6 +1,6 @@
 package com.internousdev.ECSite.action;
 
-import java.util.HashMap;
+
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -20,10 +20,19 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public String pay;
 
 	//アイテム情報を格納
-	public Map<String,Object> Session = new HashMap<>();
+	public Map<String,Object> Session;
 
 	//処理結果
 	public String result;
+
+
+
+	public String itemName;
+	public int itemPrice;
+
+
+
+
 
 
 
@@ -32,9 +41,9 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 		result = SUCCESS;
 		Session.put("count", count);
 		int intCount = Integer.parseInt(Session.get("count").toString());
-		int intPrice = Integer.parseInt(Session.get("buyItem_price").toString());
 
-		Session.put("total_price", intCount * intPrice);
+		Session.put("total_price", intCount * itemPrice);
+		Session.put("buyItem_name", itemName);
 		String payment;
 
 		if(pay.equals("1")){
@@ -69,6 +78,34 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	@Override
 	public void setSession(Map<String,Object> Session){
 		this.Session = Session;
+	}
+
+	/**
+	 * @return itemPrice
+	 */
+	public int getItemPrice() {
+		return itemPrice;
+	}
+
+	/**
+	 * @param itemPrice セットする itemPrice
+	 */
+	public void setItemPrice(int itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
+	/**
+	 * @return itemName
+	 */
+	public String getItemName() {
+		return itemName;
+	}
+
+	/**
+	 * @param itemName セットする itemName
+	 */
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 
 }
