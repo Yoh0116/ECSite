@@ -69,22 +69,25 @@
 		<div>
 			<s:form action="BuyItemAction">
 				<table>
+
 					<tr>
 						<td>
 							<span>商品名</span>
 						</td>
 						<td>
-							<s:property value="loginUserInfoMap.buyItem_name"/><br>
+							<s:property value="Session.buyItem_name"/>
 						</td>
 					</tr>
+
 					<tr>
 						<td>
 							<span>値段</span>
 						</td>
 						<td>
-							<s:property value="loginUserInfoMap.buyItem_price"/><span>円</span>
+							<s:property value="Session.buyItem_price"/><span>円</span>
 						</td>
 					</tr>
+
 					<tr>
 						<td>
 							<span>購入台数</span>
@@ -99,6 +102,7 @@
 							</select>
 						</td>
 					</tr>
+
 					<tr>
 						<td>
 							<span>支払い方法</span>
@@ -108,11 +112,13 @@
 							<input type="radio" name="pay" value="2">クレジットカード
 						</td>
 					</tr>
+
 					<tr>
 						<td>
 							<s:submit value="購入"/>
 						</td>
 					</tr>
+
 				</table>
 			</s:form>
 				<div>

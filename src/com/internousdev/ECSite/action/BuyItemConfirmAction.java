@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 
-	public Map<String,Object> buyItemInfoSession = new HashMap<String,Object>();
+	public Map<String,Object> Session = new HashMap<String,Object>();
 
 	public String result;
 
@@ -21,19 +21,19 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	public String execute() throws SQLException{
 
 		buyItemCompleteDAO.buyItemInfo(
-				buyItemInfoSession.get("id").toString(),
-				buyItemInfoSession.get("login_user_id").toString(),
-				buyItemInfoSession.get("total_price").toString(),
-				buyItemInfoSession.get("count").toString(),
-				buyItemInfoSession.get("pay").toString());
+				Session.get("id").toString(),
+				Session.get("login_user_id").toString(),
+				Session.get("total_price").toString(),
+				Session.get("count").toString(),
+				Session.get("pay").toString());
 
 		result = SUCCESS;
 		return result;
 	}
 
 	@Override
-	public void setSession(Map<String,Object> buyItemInfoSession){
-		this.buyItemInfoSession = buyItemInfoSession;
+	public void setSession(Map<String,Object> Session){
+		this.Session = Session;
 	}
 
 }

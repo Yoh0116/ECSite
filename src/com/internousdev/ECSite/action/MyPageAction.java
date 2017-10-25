@@ -15,9 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class MyPageAction extends ActionSupport implements SessionAware{
 
 	//ログイン情報を格納
-	public Map<String,Object> loginInfoMap = new HashMap<>();
-
-	public Map<String,Object> historyList = new HashMap<>();
+	public Map<String,Object> Session = new HashMap<>();
 
 
 	//マイページ情報取得DAO
@@ -42,14 +40,14 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	public String execute() throws SQLException{
 
-		if(!loginInfoMap.containsKey("id")){
+		if(!Session.containsKey("id")){
 			return ERROR;
 		}
 
 		//商品を削除しない場合
 		if(deleteFlg == null){
-			String item_transaction_id = loginInfoMap.get("id").toString();
-			String user_master_id = loginInfoMap.get("login_user_id").toString();
+			String item_transaction_id = Session.get("id").toString();
+			String user_master_id = Session.get("login_user_id").toString();
 
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
 
@@ -69,8 +67,8 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	//商品履歴削除
 	public void delete() throws SQLException{
-		String item_transaction_id = loginInfoMap.get("id").toString();
-		String user_master_id = loginInfoMap.get("login_user_id").toString();
+		String item_transaction_id = Session.get("id").toString();
+		String user_master_id = Session.get("login_user_id").toString();
 
 		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
 
@@ -92,8 +90,8 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	}
 
 	@Override
-	public void setSession(Map<String,Object> loginSessionMap){
-		this.loginInfoMap = loginSessionMap;
+	public void setSession(Map<String,Object> Session){
+		this.Session = Session;
 	}
 
 }

@@ -25,7 +25,6 @@ public class MyPageDTO {
 	public void setItemName(String itemName){
 		this.itemName = itemName;
 	}
-
 	public String getTotalPrice(){
 		return this.totalPrice;
 	}

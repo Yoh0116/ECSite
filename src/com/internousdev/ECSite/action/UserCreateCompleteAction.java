@@ -17,7 +17,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 	public String userName;
 
-	public Map<String,Object> createUserSession;
+	public Map<String,Object> Session;
 
 	public String result;
 
@@ -25,9 +25,9 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 	public String execute() throws SQLException {
 
-		userCreateCompleteDAO.createUser(createUserSession.get("loginUserId").toString(),
-				createUserSession.get("loginPassword").toString(),
-				createUserSession.get("userName").toString());
+		userCreateCompleteDAO.createUser(Session.get("loginUserId").toString(),
+				Session.get("loginPassword").toString(),
+				Session.get("userName").toString());
 
 		result  = SUCCESS;
 
@@ -60,8 +60,8 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 
 	@Override
-	public void setSession(Map<String,Object> createUserSession){
-		this.createUserSession = createUserSession;
+	public void setSession(Map<String,Object> Session){
+		this.Session = Session;
 	}
 
 

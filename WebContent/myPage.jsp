@@ -89,7 +89,7 @@
 				<tr>
 					<td><s:property value="itemName"/></td>
 					<td><s:property value="totalPrice"/><span>円</span></td>
-					<td><s:property value="totalCount"/><span>個</span></td>
+					<td><s:property value="totalCount"/><span>台</span></td>
 					<td><s:property value="payment"/></td>
 					<td><s:property value="insert_date"/></td>
 				</tr>

@@ -1,5 +1,6 @@
 package com.internousdev.ECSite.action;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public String result;
 
 	//ログイン情報を格納
-	public Map<String,Object> loginUserInfoMap = new HashMap<>();
+	public Map<String,Object> Session = new HashMap<>();
 
 	//ログイン情報取得DAO
 	public LoginDAO loginDAO = new LoginDAO();
@@ -36,22 +37,26 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 
+
+
+
+
 	public String execute(){
 
 		result = ERROR;
 
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
 
-		loginUserInfoMap.put("loginUser",loginDTO);
+		Session.put("loginUser",loginDTO);
 
-		if(((LoginDTO)loginUserInfoMap.get("loginUser")).getLoginFlg()){
+		if(((LoginDTO)Session.get("loginUser")).getLoginFlg()){
 			result = SUCCESS;
 
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
-			loginUserInfoMap.put("login_user_id", loginDTO.getLoginId());
-			loginUserInfoMap.put("id",buyItemDTO.getId());
-			loginUserInfoMap.put("buyItem_name",buyItemDTO.getItemName());
-			loginUserInfoMap.put("buyItem_price",buyItemDTO.getItemPrice());
+			Session.put("login_user_id", loginDTO.getLoginId());
+			Session.put("id",buyItemDTO.getId());
+			Session.put("buyItem_name",buyItemDTO.getItemName());
+			Session.put("buyItem_price",buyItemDTO.getItemPrice());
 
 			return result;
 
@@ -77,7 +82,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	}
 
 	@Override
-	public void setSession(Map<String,Object> loginUserInfoMap){
-		this.loginUserInfoMap = loginUserInfoMap;
+	public void setSession(Map<String,Object> Session){
+		this.Session = Session;
 	}
 }

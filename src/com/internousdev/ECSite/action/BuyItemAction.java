@@ -20,7 +20,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public String pay;
 
 	//アイテム情報を格納
-	public Map<String,Object> buyItemInfoMap = new HashMap<>();
+	public Map<String,Object> Session = new HashMap<>();
 
 	//処理結果
 	public String result;
@@ -30,21 +30,21 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		result = SUCCESS;
-		buyItemInfoMap.put("count", count);
-		int intCount = Integer.parseInt(buyItemInfoMap.get("count").toString());
-		int intPrice = Integer.parseInt(buyItemInfoMap.get("buyItem_price").toString());
+		Session.put("count", count);
+		int intCount = Integer.parseInt(Session.get("count").toString());
+		int intPrice = Integer.parseInt(Session.get("buyItem_price").toString());
 
-		buyItemInfoMap.put("total_price", intCount * intPrice);
+		Session.put("total_price", intCount * intPrice);
 		String payment;
 
 		if(pay.equals("1")){
 
 			payment = "現金払い";
-			buyItemInfoMap.put("pay", payment);
+			Session.put("pay", payment);
 
 		}else{
 			payment = "クレジットカード";
-			buyItemInfoMap.put("pay", payment);
+			Session.put("pay", payment);
 		}
 		return result;
 	}
@@ -67,8 +67,8 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 
 	@Override
-	public void setSession(Map<String,Object> buyItemInfoMap){
-		this.buyItemInfoMap = buyItemInfoMap;
+	public void setSession(Map<String,Object> Session){
+		this.Session = Session;
 	}
 
 }

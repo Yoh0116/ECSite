@@ -78,19 +78,19 @@
 			<s:form>
 				<tr>
 					<td>商品名</td>
-					<td><s:property value="buyItemInfoMap.buyItem_name" /></td>
+					<td><s:property value="Session.buyItem_name" /></td>
 				</tr>
 				<tr>
 					<td>値段</td>
-					<td><s:property value="buyItemInfoMap.total_price"/><span>円</span></td>
+					<td><s:property value="Session.total_price"/><span>円</span></td>
 				</tr>
 				<tr>
-					<td>購入個数</td>
-					<td><s:property value="buyItemInfoMap.count"/><span>個</span></td>
+					<td>購入台数</td>
+					<td><s:property value="Session.count"/><span>台</span></td>
 				</tr>
 				<tr>
 					<td>支払い方法</td>
-					<td><s:property value="buyItemInfoMap.pay"/></td>
+					<td><s:property value="Session.pay"/></td>
 				</tr>
 				<tr>
 					<td>
