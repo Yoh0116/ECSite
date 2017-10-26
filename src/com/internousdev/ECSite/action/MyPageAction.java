@@ -48,7 +48,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			String item_transaction_id = Session.get("id").toString();
 			String user_master_id = Session.get("login_user_id").toString();
 
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+			myPageList = myPageDAO.getMyPageUserInfo(user_master_id);
 
 			Iterator<MyPageDTO> iterator = myPageList.iterator();
 			if(!(iterator.hasNext())){
