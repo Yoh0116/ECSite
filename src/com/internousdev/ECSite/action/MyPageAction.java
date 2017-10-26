@@ -2,7 +2,6 @@ package com.internousdev.ECSite.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -15,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class MyPageAction extends ActionSupport implements SessionAware{
 
 	//ログイン情報を格納
-	public Map<String,Object> Session = new HashMap<>();
+	public Map<String,Object> Session;
 
 
 	//マイページ情報取得DAO

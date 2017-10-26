@@ -2,7 +2,6 @@ package com.internousdev.ECSite.action;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -25,7 +24,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public String result;
 
 	//ログイン情報を格納
-	public Map<String,Object> Session = new HashMap<>();
+	public Map<String,Object> Session;
 
 	//ログイン情報取得DAO
 	public LoginDAO loginDAO = new LoginDAO();

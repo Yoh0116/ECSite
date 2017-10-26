@@ -27,8 +27,10 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 
 
+	//購入するアイテム情報
 	public String itemName;
 	public int itemPrice;
+	public int id;
 
 
 
@@ -44,6 +46,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 		Session.put("total_price", intCount * itemPrice);
 		Session.put("buyItem_name", itemName);
+		Session.put("id",id);
 		String payment;
 
 		if(pay.equals("1")){
@@ -106,6 +109,20 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	 */
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
+	}
+
+	/**
+	 * @return id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id セットする id
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

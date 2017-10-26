@@ -116,6 +116,7 @@
 
 					<tr>
 						<td>
+							<input type="hidden" name="id" value="<s:property value='id'/>">
 							<input type="hidden" name="itemName" value="<s:property value='itemName'/>">
 							<input type="hidden" name="itemPrice" value="<s:property value='itemPrice'/>">
 							<s:submit value="購入"/>
