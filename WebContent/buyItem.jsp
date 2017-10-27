@@ -17,6 +17,8 @@
 		body {
 		   margin:0;
 		   padding:0;
+		   width:100%;
+		   height:100%;
 		   line-height:1.6;
 		   letter-spacing:1px;
 		   font-family:Verdana, Helvetica, sans-serif;
@@ -37,29 +39,34 @@
 		   border:1px solid #333;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
+		#header-fixed {
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			height:80px;
+			background-color:black;
 		}
 
 		#main {
-		   width: 100%;
-		   height: 500px;
-		   text-align: center;
+			padding:70px 0 80px 0;
+			text-align: center;
 		}
 
-		#footer {
+		#footer-fixed {
+			position:fixed;
+			bottom:0;
+			left:0;
 			width: 100%;
 			height: 80px;
 			background-color: black;
-			clear:both;
 		}
 	</style>
 </head>
 <body>
-	<div id="header">
-		<div id="pr">
+	<div id="header-fixed">
+		<div id="header-bk">
+			<div id="header"></div>
 		</div>
 	</div>
 	<div id="main">
@@ -126,15 +133,16 @@
 				</table>
 			</s:form>
 			</s:iterator>
-				<div>
-					<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
-					<p>マイページは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
-				</div>
+			<div>
+				<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+				<p>マイページは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
 			</div>
 		</div>
-		<div id="footer">
-			<div id="pr">
-			</div>
+	</div>
+	<div id="footer-fixed">
+		<div id="footer-bk">
+			<div id="footer"></div>
 		</div>
+	</div>
 </body>
 </html>
