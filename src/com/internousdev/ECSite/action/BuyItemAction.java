@@ -28,7 +28,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 
 	//購入するアイテム情報
-	public String itemName;
+	public String itemselect;
 	public int itemPrice;
 	public int id;
 
@@ -40,23 +40,37 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 
 	public String execute(){
-		result = SUCCESS;
-		Session.put("count", count);
-		int intCount = Integer.parseInt(Session.get("count").toString());
+		if(itemselect.equals("")){
+			result = ERROR;
+		}
+		else{
 
-		Session.put("total_price", intCount * itemPrice);
-		Session.put("buyItem_name", itemName);
-		Session.put("id",id);
-		String payment;
+			String[] tmpStr = itemselect.split(",");
+			String itemName = tmpStr[1];
+			int itemPrice2 = Integer.parseInt(tmpStr[0]);
+			setItemPrice(itemPrice2);
+			int id2 = Integer.parseInt(tmpStr[2]);
+			setId(id2);
 
-		if(pay.equals("1")){
 
-			payment = "現金払い";
-			Session.put("pay", payment);
+			result = SUCCESS;
+			Session.put("count", count);
+			int intCount = Integer.parseInt(Session.get("count").toString());
 
-		}else{
-			payment = "クレジットカード";
-			Session.put("pay", payment);
+			Session.put("total_price", intCount * itemPrice);
+			Session.put("buyItem_name", itemName);
+			Session.put("id",id);
+			String payment;
+
+			if(pay.equals("1")){
+
+				payment = "現金払い";
+				Session.put("pay", payment);
+
+			}else{
+				payment = "クレジットカード";
+				Session.put("pay", payment);
+			}
 		}
 		return result;
 	}
@@ -100,15 +114,15 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	/**
 	 * @return itemName
 	 */
-	public String getItemName() {
-		return itemName;
+	public String getItemselect() {
+		return itemselect;
 	}
 
 	/**
-	 * @param itemName セットする itemName
+	 * @param itemselect セットする itemselect
 	 */
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
+	public void setItemName(String itemselect) {
+		this.itemselect = itemselect;
 	}
 
 	/**

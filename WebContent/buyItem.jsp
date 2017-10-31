@@ -11,6 +11,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<title>商品購入画面</title>
 	<style type="text/css">
 	/* ========TAG LAYOUT======== */
@@ -62,6 +63,15 @@
 			background-color: black;
 		}
 	</style>
+	<script>
+		$(function(){
+			$('.item select').change(function(){
+				var val = $(this).val();
+				var val2 = val.split(',');
+				$('p1').text(val2[0]);
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="header-fixed">
@@ -74,7 +84,6 @@
 			<p>BuyItem</p>
 		</div>
 		<div>
-			<s:iterator value="buyItemList">
 			<s:form action="BuyItemAction">
 				<table>
 
@@ -82,8 +91,13 @@
 						<td>
 							<span>商品名</span>
 						</td>
-						<td>
-							<s:property value="itemName"/>
+						<td class="item">
+							<select name="itemselect">
+								<option value="" selected="selected">商品を選択してください</option>
+								<s:iterator value="buyItemList">
+									<option value="<s:property value='itemPrice'/>,<s:property value="itemName"/>,<s:property value='id'/>"><s:property value="itemName"/></option>
+								</s:iterator>
+							</select>
 						</td>
 					</tr>
 
@@ -92,7 +106,7 @@
 							<span>値段</span>
 						</td>
 						<td>
-							<s:property value="itemPrice"/><span>円</span>
+							<p1></p1><span>円</span>
 						</td>
 					</tr>
 
@@ -123,16 +137,15 @@
 
 					<tr>
 						<td>
-							<input type="hidden" name="id" value="<s:property value='id'/>">
-							<input type="hidden" name="itemName" value="<s:property value='itemName'/>">
-							<input type="hidden" name="itemPrice" value="<s:property value='itemPrice'/>">
+<%-- 							<input type="hidden" name="id" value="<s:property value='id'/>"> --%>
+<%-- 							<input type="hidden" name="itemName" value="<s:property value='itemName'/>"> --%>
+<%-- 							<input type="hidden" name="itemPrice" value="<s:property value='itemPrice'/>"> --%>
 							<s:submit value="購入"/>
 						</td>
 					</tr>
 
 				</table>
 			</s:form>
-			</s:iterator>
 			<div>
 				<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 				<p>マイページは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
