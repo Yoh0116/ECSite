@@ -23,10 +23,10 @@
     	<div class="box1">
     		<p>ログイン認証</p>
             <form method="post" action="LoginAction">
-            	<b>ID</b>
-            	<input type="text" name="loginUserId">
-            	<b>Password</b>
-                <input type="password" name="loginPassword">
+            	<b>ID</b><br>
+            	<input class="field" type="text" name="loginUserId" placeholder="ユーザーIDを入力"><br>
+            	<b>Password</b><br>
+                <input class="field" type="password" name="loginPassword" placeholder="パスワードを入力"><br>
                 <input type="submit" value="ログイン">
             </form>
                 <p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
