@@ -35,7 +35,7 @@
 
 	/* ========ID LAYOUT======== */
 		#top {
-		   width:780px;
+		   width:90%;
 		   margin:30px auto;
 		   border:1px solid #333;
 		}
