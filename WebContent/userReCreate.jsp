@@ -64,7 +64,7 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>UserCreate</p>
+			<p>UserReCreate</p>
 		</div>
 		<div>
 			<s:if test="errorMassage !=''">
@@ -77,7 +77,7 @@
 						<label>元々のID:</label>
 					</td>
 					<td>
-						<input type="text" name="loginUserId" value="" />
+						<input type="text" name="oldUserId" value="" />
 					</td>
 				</tr>
 				<tr>
@@ -85,24 +85,19 @@
 						<label>元々のログインPASS:</label>
 					</td>
 					<td>
-						<input type="text" name="loginPassword" value="" />
+						<input type="text" name="oldPassword" value="" />
 					</td>
 				</tr>
+					<td>
+					</td>
 				<tr>
-					<td>
-						<label>元々のユーザー名:</label>
-					</td>
-					<td>
-						<input type="text" name="userName" value="" />
-					</td>
 				</tr>
-				<br/>
 				<tr>
 					<td>
 						<label>新しいログインID:</label>
 					</td>
 					<td>
-						<input type="text" name="loginUserId" value="" />
+						<input type="text" name="newUserId" value="" />
 					</td>
 				</tr>
 				<tr>
@@ -110,7 +105,7 @@
 						<label>新しいログインPASS:</label>
 					</td>
 					<td>
-						<input type="text" name="loginPassword" value="" />
+						<input type="text" name="newPassword" value="" />
 					</td>
 				</tr>
 				<tr>
@@ -118,7 +113,7 @@
 						<label>新しいユーザー名:</label>
 					</td>
 					<td>
-						<input type="text" name="userName" value="" />
+						<input type="text" name="newuserName" value="" />
 					</td>
 				</tr>
 				<s:submit value="登録"/>
